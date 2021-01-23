@@ -44,7 +44,7 @@
 		border: 0;
 		font-size: 100%;
 		font: inherit;
-		vertical-align: baseline;
+        vertical-align: baseline;
 	}
 
 	article, aside, details, figcaption, figure,
@@ -94,7 +94,16 @@
 		-webkit-appearance: none;
 		-ms-appearance: none;
 		appearance: none;
-	}
+    }
+    
+    body::-webkit-scrollbar {
+        display: none;
+    }
+
+    body {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 
 /* Basic */
 
@@ -1147,6 +1156,23 @@
 	}
 
 /* Header */
+    .is-preload::-webkit-scrollbar {
+        display: none;
+    }
+
+    .is-preload {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+
+    #header::-webkit-scrollbar {
+        display: none;
+    }
+
+    #header {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
 
 	#header {
 		@include vendor('display', 'flex');
@@ -1155,9 +1181,9 @@
 		background: _palette(header, bg);
 		color: _palette(header, fg);
 		height: 100%;
-		overflow-y: auto;
 		position: fixed;
-		text-align: center;
+        text-align: center;
+        overflow-y: hidden;
 		top: 0;
 		width: $size-header;
 
@@ -1450,7 +1476,7 @@
 				@include vendor('transition', ('transform #{_duration(header)} ease'));
 				display: block;
 				height: 100%;
-				overflow-y: auto;
+				overflow-y: hidden;
 				position: fixed;
 				top: 0;
 				width: $size-header;

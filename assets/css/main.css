@@ -2704,7 +2704,7 @@ input, select, textarea {
 		background: #4acaa8;
 		color: #d2f2e9;
 		height: 100%;
-		overflow-y: auto;
+		overflow-y: hidden;
 		position: fixed;
 		text-align: center;
 		top: 0;
@@ -2978,7 +2978,7 @@ input, select, textarea {
 				transition: transform 0.5s ease;
 				display: block;
 				height: 100%;
-				overflow-y: auto;
+				overflow-y: hidden;
 				position: fixed;
 				top: 0;
 				width: 23em;
@@ -3314,4 +3314,24 @@ input, select, textarea {
 				padding: 0;
 			}
 
-	}
+    }
+    
+    
+    body {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    body::-webkit-scrollbar {
+        display: none;
+    }
+    
+    
+    #header {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+    }
+    
+    #header::-webkit-scrollbar {
+        display: none;
+    }
+
